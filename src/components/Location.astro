@@ -1,0 +1,80 @@
+---
+// src/components/Location.astro
+---
+
+<section id="ubicacion" class="relative bg-[#050014] py-20 border-t border-lucas-purple">
+  <div class="container mx-auto px-4">
+    
+    <div class="text-center mb-12">
+      <h2 class="text-5xl md:text-7xl font-display text-white drop-shadow-[4px_4px_0_#FF00C7] mb-4">
+        VISÍTANOS <span class="text-lucas-pink">HOY</span>
+      </h2>
+      <p class="text-gray-400 text-lg">El mejor ambiente familiar te espera</p>
+    </div>
+
+    <div class="grid lg:grid-cols-2 gap-10 items-center max-w-6xl mx-auto">
+      
+      <div class="bg-lucas-dark/50 p-8 md:p-12 rounded-3xl border border-lucas-purple/50 shadow-2xl backdrop-blur-sm">
+        <div class="space-y-8">
+          
+          <div class="flex items-start gap-4">
+            <div class="bg-lucas-pink/10 p-3 rounded-lg text-3xl">📍</div>
+            <div>
+              <h3 class="text-2xl font-display text-white mb-2">DIRECCIÓN</h3>
+              <p class="text-gray-300 text-lg leading-relaxed">
+                Av. Moctezuma y Poniente 6A <br>
+                Mz 59 Lt 29, Xico <br>
+                Valle de Chalco, C.P. 56613
+              </p>
+              <a href="https://maps.app.goo.gl/iUnUBvTzpcPBW1tF7" target="_blank" class="inline-block mt-3 text-lucas-pink font-bold hover:text-white hover:underline transition-colors">
+                ↗ Abrir en Google Maps
+              </a>
+            </div>
+          </div>
+
+          <div class="flex items-start gap-4">
+            <div class="bg-lucas-pink/10 p-3 rounded-lg text-3xl">📞</div>
+            <div>
+              <h3 class="text-2xl font-display text-white mb-2">TELÉFONO</h3>
+              <p class="text-gray-300 text-lg">
+                Pedidos e Informes: <br>
+                <a href="tel:5549095467" class="text-white font-bold text-2xl hover:text-lucas-pink transition-colors">
+                  55 4909 5467
+                </a>
+              </p>
+            </div>
+          </div>
+
+          <div class="flex items-start gap-4">
+            <div class="bg-lucas-pink/10 p-3 rounded-lg text-3xl">⏰</div>
+            <div>
+              <h3 class="text-2xl font-display text-white mb-2">HORARIO</h3>
+              <p class="text-gray-300 text-lg">
+                Ambiente Familiar y Nocturno
+              </p>
+            </div>
+          </div>
+
+        </div>
+      </div>
+
+      <div class="h-[400px] md:h-[500px] w-full bg-gray-800 rounded-3xl overflow-hidden border-4 border-gray-800 shadow-[0_0_30px_rgba(64,0,98,0.5)] relative group">
+        <iframe 
+          src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d482137.96195475303!2d-99.28142569375001!3d19.25177888854196!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x85ce1d6151ad11ad%3A0x94915595ca783c60!2sLucas%20Hot!5e0!3m2!1ses-419!2smx!4v1770228861252!5m2!1ses-419!2smx" 
+          width="100%" 
+          height="100%" 
+          style="border:0;" 
+          allowfullscreen="" 
+          loading="lazy" 
+          referrerpolicy="no-referrer-when-downgrade"
+          class="filter grayscale group-hover:grayscale-0 transition-all duration-700 w-full h-full"
+        ></iframe>
+        
+        <div class="absolute bottom-4 left-4 bg-lucas-pink text-white text-xs font-bold px-3 py-1 rounded shadow-lg">
+          LUCAS HOT HQ
+        </div>
+      </div>
+
+    </div>
+  </div>
+</section>
