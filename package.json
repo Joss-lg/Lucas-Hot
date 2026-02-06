@@ -9,7 +9,13 @@
     "astro": "astro"
   },
   "dependencies": {
-    "astro": "^5.17.1"
+    "@astrojs/preact": "^4.1.3",
+    "@nanostores/persistent": "^1.3.2",
+    "@nanostores/preact": "^1.0.0",
+    "astro": "^5.17.1",
+    "canvas-confetti": "^1.9.4",
+    "nanostores": "^1.1.0",
+    "preact": "^10.28.3"
   },
   "devDependencies": {
     "@astrojs/tailwind": "^6.0.2",

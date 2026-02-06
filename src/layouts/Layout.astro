@@ -1,6 +1,8 @@
 ---
 import Header from '../components/Header.astro';
 import Footer from '../components/Footer.astro';
+import ParticlesManager from '../components/ParticlesManager.jsx';
+
 
 interface Props {
 	title: string;
@@ -21,8 +23,9 @@ const { title } = Astro.props;
 		<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 		<link href="https://fonts.googleapis.com/css2?family=Bangers&family=Montserrat:wght@400;700;900&display=swap" rel="stylesheet">
 	</head>
-	<body class="bg-lucas-dark text-white font-body flex flex-col min-h-screen">
-		
+	
+	<body class="lucas-bg text-white font-body flex flex-col min-h-screen">
+		<ParticlesManager client:load />
 		<Header />
 
 		<main class="flex-grow">
@@ -35,11 +38,13 @@ const { title } = Astro.props;
 </html>
 
 <style is:global>
+	/* Tipografía */
 	h1, h2, h3, h4, .font-display {
 		font-family: 'Bangers', cursive;
 		letter-spacing: 0.05em;
 	}
-    /* Estilo para barra de scroll personalizada */
+    
+    /* Scrollbar personalizada */
     ::-webkit-scrollbar {
         width: 10px;
     }
@@ -52,5 +57,23 @@ const { title } = Astro.props;
     }
     ::-webkit-scrollbar-thumb:hover {
         background: #FF00C7;
+    }
+
+    /* --- EL NUEVO FONDO ESTILO 'AURORA' --- */
+    .lucas-bg {
+        background-color: #090052; /* Color base (Azul oscuro) */
+        /* Aquí creamos 3 "focos" de luz mezclados:
+           1. Arriba izquierda: Tu Morado (#400062)
+           2. Arriba derecha/centro: Tu Rosa Neón (#FF00C7) para el brillo fuerte
+           3. Abajo: El Azul profundo (#090052)
+        */
+        background-image: 
+            radial-gradient(at 0% 0%, #400062 0px, transparent 50%),
+            radial-gradient(at 100% 0%, #FF00C7 0px, transparent 40%),
+            radial-gradient(at 50% 100%, #090052 0px, transparent 50%);
+        
+        background-attachment: fixed; /* Esto hace que el fondo se quede quieto al bajar */
+        background-size: cover;
+        background-repeat: no-repeat;
     }
 </style>

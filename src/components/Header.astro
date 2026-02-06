@@ -1,6 +1,7 @@
 ---
 // src/components/Header.astro
 import { menuCategories } from '../data/menu.js';
+import CartCounter from './CartCounter.jsx';
 ---
 
 <nav class="bg-lucas-dark/95 backdrop-blur-md border-b-4 border-lucas-pink fixed w-full top-0 z-50 shadow-lg transition-all duration-300">
@@ -34,6 +35,11 @@ import { menuCategories } from '../data/menu.js';
                 </a>
             ))}
         </div>
+      </div>
+
+      <div class="relative flex items-center">
+        <a href="/carrito" class="text-white hover:text-lucas-pink text-xl transition-colors">🛒</a>
+        <CartCounter client:only="preact" />
       </div>
 
     </div>

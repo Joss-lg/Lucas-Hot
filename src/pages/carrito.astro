@@ -1,0 +1,19 @@
+---
+import Layout from '../layouts/Layout.astro';
+import CartList from '../components/CartList.jsx';
+---
+
+<Layout title="Tu Pedido | Lucas Hot Family">
+	<div class="min-h-screen pt-32 pb-20 px-4 bg-transparent">
+		
+		<div class="container mx-auto text-center mb-12">
+			<h1 class="text-5xl md:text-7xl font-display text-white mb-4">
+				TU <span class="text-lucas-pink">PEDIDO</span>
+			</h1>
+			<p class="text-gray-400">Revisa tus antojitos antes de enviar a cocina 🔥</p>
+		</div>
+
+		<CartList client:only="preact" />
+
+	</div>
+</Layout>

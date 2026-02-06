@@ -1,114 +1,210 @@
 ---
 import Layout from '../layouts/Layout.astro';
 import Location from '../components/Location.astro';
+import AddToCartBtn from '../components/AddToCartBtn.jsx';
+import ParticlesManager from '../components/ParticlesManager.jsx'; // <--- IMPORTAMOS EL MANAGER
 import { menuCategories } from '../data/menu.js';
 ---
 
 <Layout title="Lucas Hot Family | El Sabor Rebelde">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css" />
+    
+    <ParticlesManager client:only="preact" />
+    
+    <style>
+        .swiper {
+            width: 95vw;
+            max-width: 900px;
+            height: 70vh;
+            min-height: 550px;
+            max-height: 700px;
+            padding: 40px 0;
+            overflow: visible !important;
+        }
 
-    {/* SECCIÓN HERO / HEADER (Se mantiene igual) */}
-    <header class="relative min-h-[80vh] flex items-center justify-center overflow-hidden pt-48">
-        <div class="absolute inset-0 bg-[radial-gradient(circle_at_center,_var(--tw-gradient-stops))] from-lucas-purple via-lucas-dark to-black opacity-95 z-10"></div>
-        
-        <div class="absolute top-20 right-10 w-80 h-80 bg-lucas-pink rounded-full mix-blend-screen filter blur-[120px] opacity-20 animate-pulse"></div>
-        <div class="absolute bottom-10 left-10 w-80 h-80 bg-blue-600 rounded-full mix-blend-screen filter blur-[120px] opacity-20"></div>
+        @media (max-width: 640px) {
+            .swiper {
+                width: 90vw;
+                height: 600px;
+            }
+        }
+
+        .swiper-slide {
+            background: transparent;
+            border-radius: 30px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+
+        .card-content {
+            width: 100%;
+            height: 100%;
+            background: rgba(5, 0, 20, 0.4); 
+            opacity: 0.3; 
+            border: 1px solid rgba(255, 255, 255, 0.05);
+            backdrop-filter: blur(1px); 
+            transition: all 0.4s ease-out;
+            transform: scale(0.90);
+            pointer-events: none;
+        }
+
+        .swiper-slide-active .card-content {
+            background: #1A0B3D; 
+            opacity: 1; 
+            border: 2px solid #FF00C7; 
+            box-shadow: 0 0 40px rgba(255, 0, 199, 0.2);
+            backdrop-filter: none; 
+            transform: scale(1);
+            pointer-events: auto;
+            z-index: 10;
+        }
+
+        .swiper-button-next, .swiper-button-prev {
+            color: #FF00C7 !important;
+            filter: drop-shadow(0 0 10px rgba(255, 0, 199, 0.8));
+            background: rgba(0,0,0,0.5);
+            width: 50px;
+            height: 50px;
+            border-radius: 50%;
+            backdrop-filter: blur(5px);
+        }
+        .swiper-button-next::after, .swiper-button-prev::after {
+            font-size: 20px !important;
+            font-weight: bold;
+        }
+
+        /* ANIMACIONES DE FONDO */
+        .text-fire {
+            color: #FFD700;
+            text-shadow: 0 0 4px #FFF, 0 0 10px #FFD700, 0 0 20px #FF4D00, 0 0 30px #C40000;
+            animation: burn 1.5s infinite alternate;
+        }
+        @keyframes burn {
+            from { text-shadow: 0 0 4px #FFF, 0 0 10px #FFD700, 0 0 15px #FF4D00; opacity: 1; }
+            to { text-shadow: 0 0 2px #FFF, 0 0 20px #FF4D00, 0 0 30px #C40000; opacity: 0.9; }
+        }
+
+        .fire-particles {
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            overflow: hidden;
+            pointer-events: none;
+            z-index: 1;
+        }
+        .particle {
+            position: absolute;
+            bottom: -20px;
+            width: 10px; height: 10px;
+            background: #FF4D00; border-radius: 50%;
+            box-shadow: 0 0 15px #FF4D00, 0 0 30px #FFFF00;
+            animation: riseUp 3s linear infinite; opacity: 0;
+        }
+        .particle:nth-child(1) { left: 10%; animation-duration: 4s; }
+        .particle:nth-child(2) { left: 20%; animation-duration: 3.5s; }
+        .particle:nth-child(3) { left: 35%; animation-duration: 5s; width: 18px; height: 18px; } 
+        .particle:nth-child(4) { left: 50%; animation-duration: 3s; }
+        .particle:nth-child(5) { left: 65%; animation-duration: 4.5s; }
+        .particle:nth-child(6) { left: 80%; animation-duration: 3.8s; width: 14px; height: 14px; }
+        .particle:nth-child(7) { left: 90%; animation-duration: 4.2s; }
+        @keyframes riseUp {
+            0% { bottom: -20px; opacity: 0; transform: translateX(0) scale(1); }
+            50% { opacity: 0.8; background: #FFD700; }
+            100% { bottom: 80%; opacity: 0; transform: translateX(30px) scale(0); }
+        }
+    </style>
+
+    <header id="inicio" class="relative min-h-[85vh] flex items-center justify-center overflow-hidden pt-32">
+        <div class="absolute inset-0 bg-[radial-gradient(circle_at_center,_var(--tw-gradient-stops))] from-transparent via-lucas-dark/40 to-black/80 z-10"></div>
+        <div class="absolute top-20 right-10 w-64 h-64 bg-lucas-pink rounded-full mix-blend-screen filter blur-[100px] opacity-20 animate-pulse"></div>
+        <div class="absolute bottom-10 left-10 w-64 h-64 bg-blue-600 rounded-full mix-blend-screen filter blur-[100px] opacity-20"></div>
+
+        <div class="fire-particles">
+            <div class="particle"></div><div class="particle"></div><div class="particle"></div>
+            <div class="particle"></div><div class="particle"></div><div class="particle"></div><div class="particle"></div>
+        </div>
 
         <div class="relative z-20 text-center px-4 max-w-6xl mx-auto mt-10">
-            <h2 class="text-lucas-pink font-bold tracking-[0.5em] mb-8 text-sm md:text-xl uppercase animate-bounce">
-                📍 Valle de Chalco
+            <h2 class="text-lucas-pink font-bold tracking-[0.4em] mb-6 text-sm md:text-lg uppercase animate-bounce">
+                 📍 Valle de Chalco
             </h2>
-            <h1 class="text-7xl md:text-9xl font-display text-white leading-[0.9] drop-shadow-[0_5px_0px_rgba(64,0,98,1)] transform -rotate-2">
+            <h1 class="text-7xl md:text-9xl font-display text-white leading-[0.9] drop-shadow-[0_5px_0px_rgba(64,0,98,1)] transform -rotate-2 italic">
                 FAMILY SNACKS <br /> 
                 <span class="text-transparent bg-clip-text bg-gradient-to-r from-lucas-pink to-purple-400 filter drop-shadow-[0_0_15px_rgba(255,0,199,0.5)]"> & DRINKS</span>
             </h1>
-            <p class="mt-10 text-xl md:text-2xl text-gray-200 max-w-3xl mx-auto font-medium border-y border-lucas-pink/30 py-6">
-                Rompe la rutina con el sabor más <span class="text-lucas-pink font-bold">HOT</span> y el mejor ambiente familiar.
+            <p class="mt-10 text-xl md:text-2xl text-gray-200 max-w-3xl mx-auto font-medium border-y border-lucas-pink/30 py-6 font-body font-light">
+                Rompe la rutina con el sabor más <span class="text-fire font-bold italic font-display tracking-wider text-3xl">HOT</span> y el mejor ambiente familiar.
             </p>
-            
-            <div class="mt-12 flex justify-center gap-4">
-                <a href="#menu-start" class="bg-lucas-pink text-white font-bold py-4 px-10 rounded-full hover:bg-white hover:text-lucas-pink transition-all shadow-[0_0_30px_rgba(255,0,199,0.4)] hover:shadow-none transform hover:-translate-y-1">
-                    👇 Ver Menú
+            <div class="mt-12">
+                <a href="#menu-start" class="bg-lucas-pink text-white text-lg font-bold py-4 px-12 rounded-full hover:bg-white hover:text-lucas-pink transition-all shadow-[0_0_30px_rgba(255,0,199,0.4)] transform hover:-translate-y-1 inline-block">
+                      👇 Ver Menú
                 </a>
             </div>
         </div>
     </header>
 
-    {/* SECCIÓN MENÚ RENOVADA (Código nuevo insertado aquí) */}
-    <div id="menu-start" class="bg-[#050014] relative z-20 pb-24">
-        
-        {/* Fondos ambientales nuevos */}
-        <div class="absolute top-0 left-0 w-full h-full overflow-hidden pointer-events-none">
-            <div class="absolute top-[10%] left-[-10%] w-[40rem] h-[40rem] bg-lucas-purple rounded-full mix-blend-screen filter blur-[150px] opacity-20"></div>
-            <div class="absolute bottom-[20%] right-[-10%] w-[30rem] h-[30rem] bg-lucas-fire rounded-full mix-blend-screen filter blur-[150px] opacity-10"></div>
-        </div>
+    <div id="menu-start" class="bg-transparent relative z-20 pb-24 overflow-hidden">
+        <div class="h-px bg-gradient-to-r from-transparent via-lucas-pink to-transparent opacity-50 shadow-[0_0_20px_#FF00C7]"></div>
 
-        <div class="container mx-auto px-4 py-20 relative z-10">
+        <div class="container mx-auto px-4 py-20">
+            <h2 class="text-5xl md:text-7xl text-center text-white mb-4 drop-shadow-[4px_4px_0_#400062] font-display italic">
+                NUESTRO <span class="text-lucas-pink">MENÚ</span>
+            </h2>
+            <p class="text-center text-gray-400 mb-16 text-lg font-light tracking-wide font-body">Desliza las tarjetas para elegir tu antojo 🔥</p>
             
-            <div class="text-center mb-20">
-                <h2 class="text-5xl md:text-7xl text-white mb-4 drop-shadow-lg">
-                    NUESTRO <span class="text-transparent bg-clip-text bg-gradient-to-r from-lucas-pink to-lucas-fire">MENÚ</span>
-                </h2>
-                <div class="h-1 w-24 bg-gradient-to-r from-lucas-pink to-lucas-fire mx-auto rounded-full"></div>
-                <p class="text-gray-400 mt-6 text-lg font-light tracking-wide max-w-2xl mx-auto">
-                    Explora nuestras especialidades preparadas al momento. <br>
-                    <span class="text-lucas-fire font-bold">¡Cuidado, quema! 🔥</span>
-                </p>
-            </div>
-
             {menuCategories.map((category) => (
-                <section id={category.id} class="mb-24 scroll-mt-32">
-                    
-                    <div class="flex items-end gap-4 mb-10 border-b border-gray-800 pb-4">
-                        <h3 class="text-4xl md:text-5xl font-display text-white uppercase tracking-wide flex items-center gap-3">
-                            <span class="text-lucas-fire">{category.icon}</span> 
+                <section id={category.id} class="mb-40 scroll-mt-32 flex flex-col items-center">
+                    <div class="flex items-center justify-center gap-5 mb-10 border-b border-white/10 pb-6 w-full max-w-4xl">
+                        <div class="bg-lucas-pink text-white w-12 h-12 rounded-lg rotate-3 flex items-center justify-center text-2xl shadow-[0_0_15px_#FF00C7] border border-white">
+                            {category.icon}
+                        </div>
+                        <h3 class="text-4xl md:text-6xl font-display text-white uppercase tracking-wider italic">
                             {category.title}
                         </h3>
-                        {category.note && (
-                            <span class="hidden md:inline-block text-xs font-bold text-gray-500 bg-gray-900 px-3 py-1 rounded-full border border-gray-800 mb-2">
-                                {category.note}
-                            </span>
-                        )}
                     </div>
 
-                    <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
-                        {category.items.map((item) => (
-                            <div class={`relative group p-6 rounded-xl transition-all duration-300 border hover:-translate-y-1 
-                                ${item.highlight 
-                                    ? 'bg-gradient-to-br from-lucas-purple/40 to-black border-lucas-pink shadow-[0_0_30px_rgba(255,0,199,0.15)] md:col-span-2 lg:col-span-2' 
-                                    : 'bg-gradient-to-br from-[#120B2E] to-[#080418] border-gray-800 hover:border-lucas-fire/50 hover:shadow-[0_0_20px_rgba(255,77,0,0.15)]'
-                                }`}>
-                                
-                                {/* Etiqueta Destacado */}
-                                {item.highlight && (
-                                    <div class="absolute -top-3 -right-3 bg-lucas-pink text-white text-xs font-bold px-3 py-1 rounded-full shadow-lg border border-white/20 animate-pulse">
-                                        ★ FAVORITO
-                                    </div>
-                                )}
+                    <div class="swiper mySwiper">
+                        <div class="swiper-wrapper">
+                            {category.items.map((item) => (
+                                <div class="swiper-slide">
+                                    <div class="card-content p-8 md:p-10 rounded-[30px] flex flex-col justify-between relative overflow-hidden">
+                                        <div class="absolute -top-20 -right-20 w-64 h-64 bg-lucas-pink/10 blur-[80px] rounded-full"></div>
+                                        <div class="relative z-10 flex flex-col h-full">
+                                            <div class="flex justify-between items-start mb-6 gap-4">
+                                                <h4 class="text-3xl md:text-5xl font-display text-white uppercase italic leading-[1] drop-shadow-md">
+                                                    {item.name}
+                                                </h4>
+                                                <span class="text-lucas-pink text-3xl md:text-4xl font-display italic whitespace-nowrap drop-shadow-sm">
+                                                    {item.price}
+                                                </span>
+                                            </div>
+                                            <p class="text-gray-300 text-lg md:text-xl font-body font-light leading-snug italic border-l-4 border-lucas-pink/50 pl-4 mb-6">
+                                                {item.desc}
+                                            </p>
+                                            <div class="mt-auto"></div>
 
-                                <div class="flex justify-between items-start gap-4 mb-3">
-                                    <h4 class={`font-display text-white leading-tight ${item.highlight ? 'text-3xl' : 'text-xl group-hover:text-lucas-pink transition-colors'}`}>
-                                        {item.name}
-                                    </h4>
-                                    
-                                    <div class={`font-display text-lg px-3 py-1 rounded-lg shadow-sm whitespace-nowrap
-                                        ${item.highlight 
-                                            ? 'bg-lucas-fire text-white rotate-2' 
-                                            : 'bg-[#1F1440] text-lucas-pink group-hover:bg-lucas-pink group-hover:text-white transition-colors'
-                                        }`}>
-                                        {item.price}
+                                            <div class="mb-6 relative z-30">
+                                                <AddToCartBtn client:visible item={item} />
+                                            </div>
+
+                                            <div class="pt-4 border-t border-white/10 flex justify-between items-center">
+                                                 <span class="text-gray-500 text-[10px] tracking-[0.3em] uppercase font-bold">Lucas Family</span>
+                                                 {item.highlight && (
+                                                    <span class="bg-lucas-pink text-white text-[10px] font-bold px-3 py-1 rounded-full shadow-[0_0_10px_#FF00C7] animate-pulse">
+                                                        ★ TOP
+                                                    </span>
+                                                 )}
+                                            </div>
+                                        </div>
                                     </div>
                                 </div>
-                                
-                                <p class="text-gray-400 text-sm md:text-base leading-relaxed font-body group-hover:text-gray-300 transition-colors">
-                                    {item.desc}
-                                </p>
-
-                                {/* Barra decorativa inferior */}
-                                <div class={`absolute bottom-0 left-4 right-4 h-[2px] rounded-full transform scale-x-0 group-hover:scale-x-100 transition-transform duration-500
-                                    ${item.highlight ? 'bg-lucas-pink' : 'bg-lucas-fire'}`}>
-                                </div>
-                            </div>
-                        ))}
+                            ))}
+                        </div>
+                        <div class="swiper-button-next !-right-2 md:!-right-10"></div>
+                        <div class="swiper-button-prev !-left-2 md:!-left-10"></div>
                     </div>
                 </section>
             ))}
@@ -117,4 +213,31 @@ import { menuCategories } from '../data/menu.js';
 
     <Location />
 
+    <script is:inline src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
+    <script is:inline>
+        document.querySelectorAll('.mySwiper').forEach(el => {
+            new Swiper(el, {
+                effect: "cards",
+                grabCursor: true,
+                initialSlide: 0,
+                centeredSlides: true,
+                slidesPerView: "auto",
+                loop: false,
+                cardsEffect: {
+                    rotate: false,
+                    perSlideRotate: 2,
+                    perSlideOffset: 12,
+                    slideShadows: false,
+                },
+                navigation: {
+                    nextEl: ".swiper-button-next",
+                    prevEl: ".swiper-button-prev",
+                },
+                autoplay: {
+                    delay: 5000,
+                    disableOnInteraction: true,
+                },
+            });
+        });
+    </script>
 </Layout>
