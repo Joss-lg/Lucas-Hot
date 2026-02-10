@@ -1,0 +1,71 @@
+---
+// src/components/PromoBanner.astro
+
+// Tus imágenes (Placeholder por ahora)
+const images = [
+  "/images/hamburguesa-promo.jpg", 
+  "/images/alitas-promo.jpg",
+  "/images/azulito-promo.jpg",
+  "/images/tacos-promo.jpg",
+  "/images/postre-promo.jpg",
+  "/images/costillas-promo.jpg",
+];
+---
+
+<div class="my-8 relative z-30 py-4 overflow-visible">
+  
+  <div class="swiper promo-swiper overflow-visible">
+    <div class="swiper-wrapper transition-timing-function-linear">
+      
+      {/* Solo necesitamos UNA tanda de imágenes. 
+          Swiper se encarga de hacer el bucle infinito automáticamente.
+      */}
+      {images.map((img, index) => (
+        /* Definimos el tamaño de las diapositivas aquí con CSS arbitrario para control total */
+        <div class="swiper-slide flex-shrink-0 w-[220px] h-[130px] md:w-[380px] md:h-[220px] rounded-2xl overflow-hidden border-2 border-white/10 relative group">
+          <img 
+            src={img} 
+            alt={`Promo ${index}`} 
+            class="w-full h-full object-cover transform group-hover:scale-110 transition-transform duration-700"
+            /* Placeholder de color para que se vea bien mientras no hay fotos reales */
+            onerror="this.src='https://placehold.co/400x200/1a0b3d/FF00C7?text=Lucas+Hot+Promo'" 
+          />
+          {/* Capa rosa al pasar el mouse */}
+          <div class="absolute inset-0 bg-lucas-pink/10 opacity-0 group-hover:opacity-100 transition-opacity duration-300 pointer-events-none"></div>
+        </div>
+      ))}
+
+    </div>
+  </div>
+</div>
+
+<style>
+  /* Asegura que el movimiento sea continuo y lineal, 
+    sin la aceleración/desaceleración típica de los carruseles.
+  */
+  :global(.promo-swiper .swiper-wrapper) {
+    transition-timing-function: linear !important;
+  }
+</style>
+
+<script is:inline>
+  // Esperamos a que se cargue el DOM para iniciar este Swiper específico
+  document.addEventListener('DOMContentLoaded', function () {
+      new Swiper(".promo-swiper", {
+          slidesPerView: "auto", // Las diapositivas tienen el ancho que definimos en el HTML
+          spaceBetween: 30,      // Espacio entre fotos
+          loop: true,            // Bucle infinito real
+          freeMode: true,        // ¡CLAVE! Permite arrastrar libremente hacia atrás y adelante sin que se "pegue" a una foto
+          grabCursor: true,      // Muestra la manita para indicar que se puede agarrar
+          speed: 6000,           // Velocidad del movimiento automático (más alto = más lento)
+          autoplay: {
+              delay: 0,                  // Que empiece a moverse de inmediato
+              disableOnInteraction: false, // Que siga moviéndose después de que el usuario lo suelte
+              pauseOnMouseEnter: true,   // ¡CLAVE! Se pausa si pones el mouse encima
+          },
+          // Desactivamos los puntos de paginación y flechas porque no los queremos
+          pagination: false,
+          navigation: false,
+      });
+  });
+</script>

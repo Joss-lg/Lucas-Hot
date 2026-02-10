@@ -7,12 +7,12 @@ export const menuCategories = [
       icon: '🍔',
       note: 'Todas son de 100g en crudo',
       items: [
-        { name: 'Salchi Burger', price: '$109', desc: 'Carne natural, salchicha frita, queso Oaxaca, jamón frito, lechuga, jitomate, cebolla, picante y pepinillos.' },
-        { name: 'Chori Burger Argentino', price: '$119', desc: 'Carne natural, chorizo argentino asado, queso Oaxaca, jamón frito + papas a la francesa.' },
-        { name: 'Big Monster Lucas', price: '$199', desc: 'DOBLE carne, DOBLE queso, DOBLE jamón en tres panes brioche, coronada con aros de cebolla. + Papas y Nachos.' },
-        { name: 'Hawaiana Burger', price: '$109', desc: 'Carne natural, queso Oaxaca, jamón, piña natural frita. Decorada con una cereza. + Papas.' },
-        { name: 'Pechuga Burger BBQ', price: '$129', desc: 'Medallón de pollo frito empanizado con panko, jamón, queso Oaxaca y salsa BBQ. + Nachos.' },
-        { name: 'Pizza Burger', price: '$119', desc: 'Carne natural, queso Oaxaca, pepperoni y aderezo mayochipotle. + Papas.' },
+        { name: 'Salchi Burger', price: '$109', desc: 'Jugosa Carne Natural De Hamburguesa, Salchicha Frita. Queso Oaxaca Derretido, Jamón Frito, Lechuga, Jitomate, Cebolla, Picante, Pepinillos Al Gusto Entre Dos Panes Brioche Untados Con Mayonesa Y Acompañada De Papas A La Francesa. '},
+        { name: 'Chori Burger Argentino', price: '$119', desc: 'Jugosa Carne Natural De Hamburguesa ,Chorizo Argentino Asado, Queso Oaxaca Derretido, Jamón Frito, Lechuga, Jitomate, Cebolla, Picante Y Pepinillos Al Gusto Entre Dos Panes Brioche Untados Con Mayonesa Y Acompañada De Papas A La Francesa' },
+        { name: 'Big Monster Lucas', price: '$199', desc: 'Dos Jugosas Carnes Naturales De Hamburguesa, Doble Porción De Queso Oaxaca Derretido, Doble Porción De Jamón Frito, Lechuga, Jitomate, Cebolla Picante Y Pepinillos Al Gusto. Entre Tres Panes Brioche Untados Con Mayonesa Coronados Con Dos Aros De Cebolla Y Acompañados De Una Porción De Papas A La Francesa Y Una Porción De Nachos.' },
+        { name: 'Hawaiana Burger', price: '$109', desc: 'Jugosa Carne Natural De Hamburguesa, Queso Oaxaca Derretido, Jamón, Pina Natural Frita, Lechuga, Jitomate, Cebolla Picante Y Pepinillos Al Gusto. Entre Dos Panes Brioche Untados Con Mayonesa Y Decorados Con Una Deliciosa Cereza Acompañados De Papas A La Francesa ' },
+        { name: 'Pechuga Burger BBQ', price: '$129', desc: 'Delicioso Medallón De Pollo Frito Y Empanizado Con Panko Jamón Y Queso Oaxaca Derretido Lechuga, Jitomate, Cebolla, Picante Y Pepinillos Al Gusto. Entre Dos Panes Brioche Untados Con BBQ Y Acompañado De Crujientes Nachos ' },
+        { name: 'Pizza Burger', price: '$119', desc: 'Jugosa Carne Natural De Hamburguesa, Queso Oaxaca Derretido Jamón Frito, Lechuga, Jitomate, Cebolla, Picante, Pepinillos Al Gusto. Entre Dos Panes Brioche Untados Con Aderezo Mayochipotle Coronada Con Generoso Queso Oaxaca Derretido Y Pepperoni Acompañada De Papas A La Francesa' },
       ]
     },
     {
@@ -21,12 +21,12 @@ export const menuCategories = [
       icon: '🍗',
       note: 'Salsas: BBQ, Mango Habanero, Cajun, Habanero Solo',
       items: [
-        { name: 'Boneless Individual', price: '$99', desc: '6 piezas sobre cama de lechuga, con apio, zanahoria y aderezo ranch.' },
-        { name: 'Boneless Para Compartir', price: '$199', desc: '15 piezas con bastones de apio y aderezo ranch.' },
-        { name: 'Alitas (Orden 6)', price: '$85', desc: 'Bañadas en tu salsa favorita, con verdura y ranch.' },
-        { name: 'Alitas (Orden 15)', price: '$169', desc: 'Para los de buen diente. Bañadas en tu salsa favorita.' },
-        { name: 'Costillas (Orden 6)', price: '$95', desc: 'Costillitas de cerdo bañadas en salsa.' },
-        { name: 'Costillas (Orden 15)', price: '$199', desc: 'La orden grande de costillas con verdura y ranch.' },
+        { name: 'Boneless Individual', price: '$99', desc: '6 Crujientes Piezas De Boneless. Sobre Una Cama De Lechuga, Bañados En La Salsa De Tu Elección, Acompañados De Bastones De Apio Y Aderezo Ranch. ' },
+        { name: 'Boneless Para Compartir', price: '$199', desc: '15 Crujientes Piezas De Boneless Bañadas En La Salsa De Tu Elección Acompañadas De Bastones De Apio Y Aderezo Ranch.' },
+        { name: 'Alitas (Orden 6)', price: '$85', desc: 'Deliciosas Alitas Fritas. Banadas En La Salsa De Tu Elección, Acompañadas De Bastones De Zanahoria Y Apio Con Aderezo Ranch. ' },
+        { name: 'Alitas (Orden 15)', price: '$169', desc: 'Deliciosas Alitas Fritas. Banadas En La Salsa De Tu Elección, Acompañadas De Bastones De Apio Y Zanahoria Con Un Toque De Aderezo Ranch.' },
+        { name: 'Costillas (Orden 6)', price: '$95', desc: 'Seis Trozos De Costilla. Bañados En La Salsa De Tu Elección, Acompañados De Bastones De Apio Y Zanahoria Con Un Toque De Aderezo Ranch.' },
+        { name: 'Costillas (Orden 15)', price: '$199', desc: 'Quince Trozos De Costilla. Bañados En La Salsa De Tu Elección, Acompañados De Bastones De Apio Y Zanahoria Con Un Toque De Aderezo Ranch.' },
       ]
     },
     {
@@ -35,23 +35,35 @@ export const menuCategories = [
       icon: '🌭',
       note: '¡Todas las órdenes incluyen 2 piezas!',
       items: [
-        { name: 'Hot Clásico', price: '$79', desc: 'Salchicha Frankfurt, mayochipotle, jitomate, cebolla. + Nachos.' },
-        { name: 'La Momia', price: '$89', desc: 'Salchicha envuelta en tocino, mayonesa, vegetales. + Nachos.' },
-        { name: 'Chili Dog', price: '$99', desc: 'Con chili casero delicioso, jitomate y cebolla. + Papas.' },
-        { name: 'Hot Burger Dog', price: '$119', desc: 'Salchicha Frankfurt + Carne de hamburguesa y queso Oaxaca. + Papas.' },
-        { name: 'Hot Dog Lucas', price: '$159', desc: 'La especialidad: Tocino, aguacate, queso amarillo líquido. + Nachos.' },
+        { name: 'Hot Clásico', price: '$79', desc: 'Tradicional Salchicha Frankfurt Entre Pan De Hot Dog Untado Con Aderezo Mayochipotle, Jitomate, Cebolla Y Picante; Acompañado De Una Porción De Nachos.' },
+        { name: 'La Momia', price: '$89', desc: 'Tradicional Salchicha Frankfurt Envuelta En Tocino Entre Pan De Hot Dog Untado Con Mayonesa Cubierto De Jitomate Cebolla Y Picante Acompañados De Una Porción De Nachos.' },
+        { name: 'Chili Dog', price: '$99', desc: 'Tradicional Salchicha Frankfurt Entre Pan De Hot Dog Juntado De Mayonesa Bañado En Nuestro Delicioso Chili Casero Con Jitomate Cebolla Y Picante Acompanado De Papas A La Francesa.' },
+        { name: 'Hot Burger Dog', price: '$119', desc: 'Tradicional Salchicha Frankfurt Entre Un Pan De Hot Dog Untado De Aderezo Mayochipotle Coronado Con Carne De Hamburguesa Y Queso Oaxaca Con Jitomate Cebolla Y Picante Acompañado De Papas A La Francesa.' },
+        { name: 'Hot Dog Lucas', price: '$159', desc: 'Tradicional Salchicha Frankfurt, Tocino, Queso Oaxaca, Aguacate Y Queso Amarillo Liquido Entre Un Pan De Hot Dog Untado Con Aderezo Mayochipotle Con Jitomate Cebolla Picante Coronado Con Papas A La Francesa Y Acompañado De Crujientes Nachos.' },
       ]
     },
     {
-      id: 'tacos',
-      title: 'TACOS & BURRITOS',
+      id: 'burritos',
+      title: 'BURRITOS',
       icon: '🌮',
-      note: 'Tacos en maíz / Burritos en harina',
+      note: 'Burritos en harina',
       items: [
-        { name: 'Burrito Pecherón', price: '$119', desc: 'Arrachera, chistorra, queso panela, guacamole. + Papas y chile toreado.' },
-        { name: 'Burrito Chicken', price: '$109', desc: 'Pechuga sazonada, morrón, cebolla, lechuga. + Nachos.' },
-        { name: 'Burrito Campechano', price: '$119', desc: 'Bistec, longaniza, aguacate y queso Oaxaca. + Papas.' },
-        { name: 'Tacos (Variedad)', price: '$29 - $39', desc: 'Arrachera ($39), Chistorra ($29), Pechuga ($29), Chorizo Argentino ($29). Todos con papas.' },
+        { name: 'Burrito Pecherón', price: '$119', desc: 'Jugosa Carne De Arrachera, Chistorra, Queso Panela, Guacamole, Lechuga, Crema. Sobre Una Tortilla De Harina, Enrollado Con Tocino Y Acompañado De Papas A La Francesa Y Chile Toreados.', extraCheese: true },
+        { name: 'Burrito Chicken', price: '$109', desc: 'Pechuga De Pollo Sazonada Con Especias, Chile Morrón, Cebolla, Lechuga, Crema. Sobre Una Tortilla De Harina Enrollada En Forma De Taco Acompañada De Nachos Crujientes.', extraCheese: true },
+        { name: 'Burrito Campechano', price: '$119', desc: 'Jugoso Bistec De Res, Longaniza, Lechuga, Aguacate, Cebolla Y Queso Oaxaca. Sobre Una Tortilla De Harina Enrollado En Forma De Taco Acompañado De Papas A La Francesa.', extraCheese: true },
+      ]
+    },
+        {
+      id: 'tacos',
+      title: 'TACOS',
+      icon: '🌮',
+      note: 'Tacos en maíz',
+      items: [
+        { name: 'Tacos de Arrachera', price: '$39', desc: 'Jugosa Carne De Arrachera Marinada Sobre Una Tortilla De Maíz Acompañada De Papas A La Francesa.', extraCheese: true },
+        { name: 'Tacos de Chistorra', price: '$29', desc: 'Deliciosa Chistorra De La Casa Sobre Una Tortilla De Maíz Acompañada De Papas A La Francesa.', extraCheese: true },
+        { name: 'Tacos de Pechuga', price: '$29', desc: 'Deliciosa Pechuga De Pollo Asada Sobre Una Tortilla De Maíz Acompañada De Papas A La Francesa.', extraCheese: true },
+        { name: 'Tacos de Chorizo Argentino', price: '$35', desc: 'Delicioso Chorizo Argentino De La Casa Sobre Una Tortilla De Maíz Acompañado De Papas A La Francesa.', extraCheese: true },
+        { name: 'Tacos de Aguaja', price: '$29', desc: 'Jugosa Aguja Norteña Sobre Una Tortilla De Maíz Acompañada De Papas A La Francesa.', extraCheese: true },
       ]
     },
     /* --- NUEVA SECCIÓN AGREGADA --- */
@@ -74,11 +86,12 @@ export const menuCategories = [
       icon: '🍟',
       note: 'Ideales para compartir',
       items: [
-        { name: "Pa' Botanear (Familiar)", price: '$499', desc: '6 alitas, 6 boneless, 6 costillas, 4 dedos, 8 salchipulpos, 6 aros, papas, nachos y verdura. ¡BRUTAL!', highlight: true },
-        { name: 'Dedos de Queso', price: '$89', desc: '6 piezas con bastones de zanahoria y ranch.' },
-        { name: 'Aros de Cebolla', price: '$59', desc: '6 piezas sobre cama de nachos con queso amarillo.' },
-        { name: 'Brocheta BBQ', price: '$129', desc: 'Costilla, pimiento, cebolla, piña/naranja y pepino.' },
-        { name: 'Ensalada Boneless', price: '$149', desc: 'Mix verde, pepino, nuez, arándano, queso panela y 5 boneless.' },
+        { name: "Pa' Botanear (Familiar)", price: '$499', desc: 'Seis Alitas De Pollo, Seis Boneless, Seis Costillas, Cuatro Dedos De Queso, Ocho Salchipulpos, Seis Aros De Cebolla, Una Orden De Papas A La Francesa, Una Orden De Nachos, Bastones De Zanahoria, Bastones De Apio Con Un Toque De Queso Amarillo Y Aderezo Rancho Al Centro.', highlight: true },
+        { name: 'Dedos de Queso 6Pz', price: '$89', desc: 'Crujientes Dedos De Queso Acompañados De Queso Amarillo Liquido Bastones De Zanahoria Y Un Toque De Aderezo Ranch.' },
+        { name: 'Aros de Cebolla 6Pz', price: '$59', desc: 'Crujientes Piezas De Aros De Cebolla Sobre Una Cama De Nachos Acompañados De Queso Amarillo Y Aderezo Ranch. ' },
+        { name: 'Brocheta BBQ', price: '$129', desc: 'Rica Brocheta De Costilla De Cerdo, Pimiento Morrón, Cebolla Frita, Piña O Naranja Y Pepino Bañada En Salsa De Su Elección.' },
+        { name: 'Ensalada Boneless', price: '$149', desc: 'Mix De Hojas Verdes. Pepino, Zanahoria, Nuez, Queso Panela, Arándano Deshidratado Y Cinco Piezas De Boneles Naturales Acompanadas De El Aderezo De Su Elección.' },
+        { name: 'Ensalada de Frutos Rojos', price: '$149', desc: 'Mix De Hojas Verdes. Fresa Portada En Finas Rodajas, Cereza Marroquí, Frambuesa, Zarzamora, Nuez Ajonjolí Caramelizado, Arándano Deshidratado Y Rodajas De Fruta De Temporada Coronada Con Una Deliciosa Pechuga Asada Acompañado De Su Aderezo Favorito.' },
       ]
     },
     {
@@ -87,22 +100,59 @@ export const menuCategories = [
       icon: '🧸',
       note: 'Para los peques',
       items: [
-        { name: 'Salehipress', price: '$99', desc: 'Huevos revueltos con jamón, salchicha y 2 mini hot cakes.' },
-        { name: 'Tralaleritos', price: '$99', desc: 'Dos mini hamburguesas con papas y pepino.' },
-        { name: 'Krakeneitos', price: '$119', desc: 'Banderilla de salchipulpos sobre cama de papas.' },
+        { name: 'Salehipress', price: '$99', desc: 'Dos Divertidos Huevos Revueltos Con Jamón Tiras De Salchicha Frita Y Dos Deliciosos Mini Hot Cakes.' },
+        { name: 'Tralaleritos', price: '$99', desc: 'Dos Mini Hamburguesitas Con Sus Deliciosas Papas Fritas Y Bastones De Pepino.' },
+        { name: 'Krakeneitos', price: '$119', desc: 'Una Divertida Banderilla De Salchipulpos Y Crujientes Boneless Sobre Una Cama De Papas A La Frances.' },
       ]
     },
     {
       id: 'bebidas',
-      title: 'BEBIDAS',
+      title: 'BEBIDAS SIN ALCOHOL',
       icon: '🍺',
       note: 'Pregunta por la disponibilidad',
       items: [
-        { name: 'Tritón (5L / 10L)', price: '$450 / $850', desc: 'De Cerveza o Azul (Blue).' },
-        { name: 'Azulitos & Mojitos', price: '$90 - $100', desc: 'La especialidad de la casa.' },
-        { name: 'Cervezas', price: '$45 - $90', desc: 'Media, Corona, Barril, Caguamas.' },
-        { name: 'Botellas', price: '$750 - $850', desc: 'Red Label, Absolut, Bacardi Sabores.' },
-        { name: 'Sin Alcohol', price: '$30 - $69', desc: 'Sodas Italianas ($69), Malteadas ($69), Refrescos ($30).' },
-      ]
+      { name: 'Piñada', price: '$79', desc: 'Refrescante mezcla de piña y crema de coco, sin alcohol.' },
+      { name: 'Ice Blue', price: '$69', desc: 'Nuestra bebida azul insignia, refrescante y frutal.' },
+
+      { name: 'Malteada de Chocolate', price: '$69', desc: 'Clásica y cremosa, preparada con chocolate premium.' },
+      { name: 'Malteada de Fresa', price: '$69', desc: 'Deliciosa combinación de fresas naturales y helado.' },
+      { name: 'Malteada de Vainilla', price: '$69', desc: 'Suave y tradicional con un toque de esencia de vainilla.' },
+
+      { name: 'Naranjada', price: '$49', desc: 'Preparada con naranja natural, ya sea natural o mineral.' },
+      { name: 'Limonada', price: '$49', desc: 'El toque perfecto de limón, disponible en vaso o jarra.' },
+      { name: 'Sangría', price: '$49', desc: 'Mezcla preparada con jarabe de uva y un toque de limón.' },
+      { name: 'Tehuacán', price: '$49', desc: 'Agua mineral clásica, ideal para acompañar tus alimentos.' },
+
+      { name: 'Arizona Preparado', price: '$49', desc: 'Té helado servido con hielos y un toque especial de la casa.' },
+      { name: 'Arizona Sola', price: '$39', desc: 'Tu té Arizona favorito en presentación clásica.' },
+
+      { name: 'Coca-Cola de Lata', price: '$35', desc: 'Refresco de 355ml bien frío.' },
+      { name: 'Refescos Sabores', price: '$30', desc: 'Variedad de sabores disponibles para refrescarte.' },
+      { name: 'Agua Embotellada', price: '$25', desc: 'Agua purificada para hidratarte.' },
+
+      { name: 'Soda Italiana', price: '$69', desc: 'Agua mineral con jarabe frutal y perlas de sabor.' },
+      { name: 'Heineken 0.0', price: '$49', desc: 'Todo el sabor de la malta, pero totalmente sin alcohol.' }
+    ]
+    },
+        {
+      id: 'bebidas',
+      title: 'BEBIDAS CON ALCOHOL',
+      icon: '🍺',
+      note: 'Pregunta por la disponibilidad',
+      items: [
+      { name: 'Piña Colada', price: '$100', desc: 'Clásico tropical con ron, crema de coco y jugo de piña.' },
+      { name: 'Blue Ice', price: '$90', desc: 'Coctel de la casa con un toque eléctrico de licor azul.' },
+
+      { name: 'Mojito de Frutos Rojos', price: '$100', desc: 'Preparado con hierbabuena, ron y una selección de frutos rojos.' },
+      { name: 'Mojito Tradicional', price: '$100', desc: 'La receta original: ron, hierbabuena fresca, azúcar y limón.' },
+      { name: 'Mojito de Mango', price: '$100', desc: 'Refrescante combinación de ron con pulpa de mango natural.' },
+
+      { name: 'Cervezas de Barril Natural', price: '$80', desc: 'Cerveza fresca de barril, servida directamente del grifo.' },
+      { name: 'Cervezas de Barril Escarchada', price: '$90', desc: 'Servida en tarro helado con escarchado de sal o chile.' },
+      { name: 'Cervezas Indio', price: '$45', desc: 'Botella de 355ml, la clásica cerveza oscura.' },
+      { name: 'Cervezas Tecate', price: '$45', desc: 'Botella de 355ml, disponible en Roja o Light.' },
+      { name: 'Cervezas Victoria', price: '$49', desc: 'Botella de 355ml, sabor tipo Viena muy mexicano.' },
+      { name: 'Cervezas Corona', price: '$49', desc: 'Botella de 355ml, la cerveza más famosa del mundo.' }
+    ]
     }
   ];

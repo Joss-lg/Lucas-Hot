@@ -7,7 +7,8 @@ import CartCounter from './CartCounter.jsx';
 <nav class="bg-lucas-dark/95 backdrop-blur-md border-b-4 border-lucas-pink fixed w-full top-0 z-50 shadow-lg transition-all duration-300">
   <div class="container mx-auto px-4 py-2 flex justify-between items-center">
     
-    <a href="#" class="group relative z-50">
+    {/* 1. LOGO: Ahora lleva a la raíz '/' para que funcione desde el carrito */}
+    <a href="/" class="group relative z-50">
         <img 
             src="/images/Logo web Lucas.png" 
             alt="Lucas Hot Family Logo" 
@@ -17,7 +18,8 @@ import CartCounter from './CartCounter.jsx';
     
     <div class="hidden lg:flex items-center space-x-8 font-bold text-sm tracking-widest text-white">
       
-      <a href="#" class="hover:text-lucas-pink transition-colors">INICIO</a>
+      {/* 2. INICIO: Agregamos '/#inicio' para volver al hero desde cualquier lado */}
+      <a href="/#inicio" class="hover:text-lucas-pink transition-colors">INICIO</a>
 
       <div class="relative group h-full py-2">
         <button class="flex items-center gap-1 hover:text-lucas-pink transition-colors uppercase focus:outline-none">
@@ -29,7 +31,8 @@ import CartCounter from './CartCounter.jsx';
 
         <div class="absolute left-1/2 transform -translate-x-1/2 top-full mt-0 w-64 bg-[#090052] border-2 border-lucas-pink rounded-xl shadow-[0_0_20px_rgba(0,0,0,0.5)] opacity-0 invisible group-hover:opacity-100 group-hover:visible transition-all duration-300 overflow-hidden flex flex-col gap-1 p-2">
             {menuCategories.map(cat => (
-                <a href={`#${cat.id}`} class="flex items-center gap-3 px-4 py-3 hover:bg-lucas-purple/50 rounded-lg text-gray-200 hover:text-white transition-colors">
+                /* 3. DROPDOWN: Agregamos '/' antes del # */
+                <a href={`/#${cat.id}`} class="flex items-center gap-3 px-4 py-3 hover:bg-lucas-purple/50 rounded-lg text-gray-200 hover:text-white transition-colors">
                     <span class="text-lg filter drop-shadow-[0_0_2px_#FF00C7]">{cat.icon}</span>
                     <span class="text-xs font-bold">{cat.title}</span>
                 </a>
@@ -39,20 +42,23 @@ import CartCounter from './CartCounter.jsx';
 
       <div class="relative flex items-center">
         <a href="/carrito" class="text-white hover:text-lucas-pink text-xl transition-colors">🛒</a>
+        {/* client:only="preact" es vital para que el contador se actualice en tiempo real */}
         <CartCounter client:only="preact" />
       </div>
 
     </div>
 
-    <a href="#ubicacion" class="bg-lucas-pink hover:bg-white hover:text-lucas-pink text-white font-bold py-2 px-6 rounded-sm skew-x-[-10deg] transition-all duration-300 shadow-[4px_4px_0px_0px_rgba(255,255,255,0.2)] hover:shadow-none hover:translate-x-[2px] hover:translate-y-[2px]">
+    {/* 4. UBICACIÓN: Agregamos '/' antes del # */}
+    <a href="/#ubicacion" class="bg-lucas-pink hover:bg-white hover:text-lucas-pink text-white font-bold py-2 px-6 rounded-sm skew-x-[-10deg] transition-all duration-300 shadow-[4px_4px_0px_0px_rgba(255,255,255,0.2)] hover:shadow-none hover:translate-x-[2px] hover:translate-y-[2px]">
       <span class="skew-x-[10deg] inline-block text-sm">UBICACIÓN</span>
     </a>
 
   </div>
   
+  {/* 5. MENÚ MÓVIL: También corregimos los enlaces aquí */}
   <div class="lg:hidden flex overflow-x-auto space-x-3 p-3 bg-[#090052] border-t border-gray-800 text-xs text-white font-bold tracking-wider whitespace-nowrap scrollbar-hide shadow-inner">
     {menuCategories.map(cat => (
-      <a href={`#${cat.id}`} class="px-4 py-2 bg-lucas-purple/30 border border-lucas-purple rounded-full hover:bg-lucas-pink hover:border-lucas-pink transition-all flex items-center gap-2">
+      <a href={`/#${cat.id}`} class="px-4 py-2 bg-lucas-purple/30 border border-lucas-purple rounded-full hover:bg-lucas-pink hover:border-lucas-pink transition-all flex items-center gap-2">
         <span>{cat.icon}</span>
         {cat.title}
       </a>
