@@ -15,8 +15,15 @@ import CartCounter from './CartCounter.jsx';
             class="h-16 w-auto object-contain drop-shadow-[0_0_5px_rgba(255,0,199,0.5)] transform group-hover:scale-110 transition-transform duration-300"
         />
     </a>
+
+    <div class="relative flex items-center lg:absolute lg:left-1/2 lg:-translate-x-1/2 z-50 order-last lg:order-none mr-4 lg:mr-0">
+      <a href="/carrito" class ="text-white hover:text-lucas-pink text-2xl transition-colors">
+        🛒
+      </a>
+      <CartCounter client:only="preact" />
+    </div>
     
-    <div class="hidden lg:flex items-center space-x-8 font-bold text-sm tracking-widest text-white">
+    <div class="hidden lg:flex items-center space-x-12 font-bold text-sm tracking-widest text-white">
       
       {/* 2. INICIO: Agregamos '/#inicio' para volver al hero desde cualquier lado */}
       <a href="/#inicio" class="hover:text-lucas-pink transition-colors">INICIO</a>
@@ -40,11 +47,6 @@ import CartCounter from './CartCounter.jsx';
         </div>
       </div>
 
-      <div class="relative flex items-center">
-        <a href="/carrito" class="text-white hover:text-lucas-pink text-xl transition-colors">🛒</a>
-        {/* client:only="preact" es vital para que el contador se actualice en tiempo real */}
-        <CartCounter client:only="preact" />
-      </div>
 
     </div>
 
